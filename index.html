@@ -19,20 +19,23 @@
 
     var score = 0;
 
+    // ball variables
     var x = canvas.width/2;
     var y = canvas.height-60;
     var dx = 2;
     var dy = -2;
     var ballRadius = 10; 
 
+    // paddle variables
     var paddleHeight = 15;
     var paddleWidth = 100; 
     var paddleX = (canvas.width-paddleWidth)/2;
 
+    // key handler variables
     var rightPressed = false;
     var leftPressed = false;
 
-
+    // brick variables
     var brickRowCount = 4;
     var brickColumnCount = 7;
     var brickWidth = 75;
