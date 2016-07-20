@@ -26,6 +26,23 @@
     var paddleWidth = 100; 
     var paddleX = (canvas.width-paddleWidth)/2;
 
+    var brickRowCount = 4; 
+    var brickColumnCount = 7;
+    var brickWidth = 75; 
+    var brickHeight = 20; 
+    var brickPadding = 5; 
+    var brickOffsetTop = 25; 
+    var brickOffsetLeft = 25;
+
+    var bricks = [];
+    for (c = 0; c < brickColumnCount; c++) {
+        bricks[c] = [];
+        for(r = 0; r < brickRowCount; r++) {
+            bricks[c][r] = {x:0, y:0};
+        }
+
+    }
+
     var rightPressed = false;
     var leftPressed = false;
 
@@ -35,14 +52,6 @@
     //     }
     // }
 
-    function drawPaddle() {
-        context.beginPath();
-        context.rect(paddleX, canvas.height-30, paddleWidth, paddleHeight);
-        context.fillStyle = "#990000";
-        context.fill();
-        context.closePath();
-    }
-
     function drawBall() {
         context.beginPath();
         context.arc(x, y, ballRadius, 0, Math.PI*2);
@@ -51,11 +60,36 @@
         context.closePath();
     }
 
+    function drawPaddle() {
+        context.beginPath();
+        context.rect(paddleX, canvas.height-30, paddleWidth, paddleHeight);
+        context.fillStyle = "#990000";
+        context.fill();
+        context.closePath();
+    }
+
+    function drawBricks() {
+        for (c = 0; c < brickColumnCount; c++){
+            for (r = 0; r < brickRowCount; r++) {
+                var brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
+                var brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
+                bricks[c][r].x = brickX;
+                bricks[c][r].y = brickY;
+                context.beginPath();
+                context.rect(brickX, brickY, brickWidth, brickHeight);
+                context.fillStyle = "#990000";
+                context.fill();
+                context.closePath();
+            }
+        }
+    }
+
     // redraw the screen
     function draw() {
         context.clearRect(0, 0, canvas.width, canvas.height);
-        drawPaddle();
         drawBall();
+        drawPaddle();
+        drawBricks();
         // ball moving
         if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
             dx = -dx; 
