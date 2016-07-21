@@ -19,7 +19,7 @@
 
     // ball variables
     var dx = 4;
-    var dy = -4;
+    var dy = 4;
     var ballRadius = 10; 
     var ballX = canvas.width/2 - ballRadius;
     var ballY = canvas.height/2 - ballRadius;
@@ -104,9 +104,11 @@
         var netXPosition = (canvas.width - netWidth)/2;
         var netYPosition = 0;
         var step = canvas.height/20; // how many net segments
-        while (netPosition < canvas.height) {
+        while (netYPosition < canvas.height) {
             context.beginPath();
-            context.fillRect(netXPosition, netYPosition + step/4, netWidth, step/2);
+            context.rect(netXPosition, netYPosition + step/4, netWidth, step/2);
+            context.fillStyle = "ffffff";
+            context.fill();
             context.closePath();
             netYPosition += step;
         }
@@ -115,10 +117,11 @@
     // redraw the screen
     function draw() {
         context.clearRect(0, 0, canvas.width, canvas.height);
-        // drawNet();
+        drawNet();
         drawPlayerOne();
         drawPlayerTwo();
         drawBall();
+
         // ball moving
         if (ballY + dy > canvas.height - ballRadius || ballY + dy < ballRadius) {
             dy = -dy;
@@ -134,8 +137,6 @@
         } else if (ballX > canvas.width - 5 - playerWidth && ballY > playerTwoY && ballY < playerTwoY + playerHeight){
             dx = -dx;
         }
-
-
 
         // players moving
         if (downPressed && playerTwoY < canvas.height - playerHeight) {
