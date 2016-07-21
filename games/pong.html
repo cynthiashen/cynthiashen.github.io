@@ -38,7 +38,7 @@
     var sPressed = false;
 
     // 
-    var ballServed
+    var ballServed = false;
 
 
     document.addEventListener("keydown", keyDownHandler, false);
@@ -53,6 +53,10 @@
             wPressed = true;
         } else if (e.keyCode == 83) {
             sPressed = true;
+        } else if (e.keycode == 32) {
+            if (!ballServed) {
+                ballServed = true;
+            }
         }
     }
 
@@ -78,7 +82,7 @@
 
     function drawPlayerOne() {
         context.beginPath();
-        context.rect(60, playerOneY, playerWidth, playerHeight);
+        context.rect(5, playerOneY, playerWidth, playerHeight);
         context.fillStyle = "#ffffff";
         context.fill();
         context.closePath();
@@ -86,24 +90,32 @@
 
     function drawPlayerTwo() {
         context.beginPath();
-        context.rect(canvas.width - 60 - playerWidth, playerTwoY, playerWidth, playerHeight);
+        context.rect(canvas.width - 5 - playerWidth, playerTwoY, playerWidth, playerHeight);
         context.fillStyle = "#ffffff";
         context.fill();
         context.closePath();
     }
 
-    function drawLine() {
-        context.beginPath();
-        context.rect(canvas.width/2 - 3, 0, 6, canvas.height);
-        context.fillStyle = "ffffff";
-        context.fill();
-        context.closePath();
-    }
+    function drawNet() {
+        // context.rect(canvas.width/2 - 3, 0, 6, canvas.height);
+        // context.fillStyle = "ffffff";
+        // context.fill();
+        var netWidth = 4;
+        var netXPosition = (canvas.width - netWidth)/2;
+        var netYPosition = 0;
+        var step = canvas.height/20; // how many net segments
+        while (netPosition < canvas.height) {
+            context.beginPath();
+            context.fillRect(netXPosition, netYPosition + step/4, netWidth, step/2);
+            context.closePath();
+            netYPosition += step;
+        }
+    }   
 
     // redraw the screen
     function draw() {
         context.clearRect(0, 0, canvas.width, canvas.height);
-        drawLine();
+        // drawNet();
         drawPlayerOne();
         drawPlayerTwo();
         drawBall();
@@ -111,27 +123,30 @@
         if (ballY + dy > canvas.height - ballRadius || ballY + dy < ballRadius) {
             dy = -dy;
         } 
-        if (ballX > canvas.width - ballRadius || ballX < ballRadius) {
-            alert("POINT SCORED");
+        if (ballX > canvas.width - ballRadius) {
+            alert("P1 SCORED");
             document.location.reload();
-        } else if (ballX < 60 + ballRadius + playerWidth && ballY > playerOneY && ballY < playerOneY + playerHeight) {
+        } else if (ballX < ballRadius){
+            alert("P2 SCORED");
+            document.location.reload();
+        } else if (ballX < 5 + ballRadius + playerWidth && ballY > playerOneY && ballY < playerOneY + playerHeight) {
             dx = -dx;
-        } else if (ballX > canvas.width - 60 - playerWidth && ballY > playerTwoY && ballY < playerTwoY + playerHeight){
+        } else if (ballX > canvas.width - 5 - playerWidth && ballY > playerTwoY && ballY < playerTwoY + playerHeight){
             dx = -dx;
         }
 
 
 
         // players moving
-        if (downPressed && playerOneY < canvas.height - playerHeight) {
-            playerOneY += 5;
-        } else if (upPressed && playerOneY > 0) {
-            playerOneY -= 5;
-        }
-        if (sPressed && playerTwoY < canvas.height - playerHeight) {
+        if (downPressed && playerTwoY < canvas.height - playerHeight) {
             playerTwoY += 5;
-        } else if (wPressed && playerTwoY > 0) {
+        } else if (upPressed && playerTwoY > 0) {
             playerTwoY -= 5;
+        }
+        if (sPressed && playerOneY < canvas.height - playerHeight) {
+            playerOneY += 5;
+        } else if (wPressed && playerOneY > 0) {
+            playerOneY -= 5;
         }
 
         ballX += dx;
