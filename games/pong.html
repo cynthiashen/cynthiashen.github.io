@@ -20,9 +20,9 @@
     // ball variables
     var dx = 4;
     var dy = 4;
-    var ballRadius = 10; 
-    var ballX = canvas.width/2 - ballRadius;
-    var ballY = canvas.height/2 - ballRadius;
+    var ballSize = 15; 
+    var ballX = (canvas.width - ballSize) / 2;
+    var ballY = (canvas.height - ballSize) / 2;
 
     // player paddle variables
     var playerHeight = 100;
@@ -30,16 +30,15 @@
     var playerOneY = (canvas.height - playerHeight) / 2;
     var playerTwoY = (canvas.height - playerHeight) / 2;
 
-
     // key handler variables
     var upPressed = false;
     var downPressed = false;
     var wPressed = false;
     var sPressed = false;
 
-    // 
-    var ballServed = false;
-
+    // player score variables
+    var playerOneScore = 0;
+    var playerTwoScore = 0;
 
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
@@ -72,10 +71,22 @@
         }
     }
 
+    function resetBall() {
+        ballX = (canvas.width - ballSize) / 2;
+        ballY = (canvas.height - ballSize) / 2;
+        if ((playerOneScore + playerTwoScore) % 2 == 0) {
+            dx = 4; 
+            dy = 4;
+        } else {
+            dx = -4; 
+            dy = 4; 
+        }
+    }
+
     function drawBall() {
         context.beginPath();
-        context.arc(ballX, ballY, ballRadius, 0, Math.PI*2);
-        context.fillStyle = "#ffffff";
+        context.rect(ballX, ballY, ballSize, ballSize);
+        context.fillStyle = "ffffff";
         context.fill();
         context.closePath();
     }
@@ -96,14 +107,23 @@
         context.closePath();
     }
 
+    function drawPlayerOneScore() {
+        context.font = "80px Silkscreen";
+        context.fillStyle = "ffffff";
+        context.fillText(playerOneScore.toString(), canvas.width / 4, 75);
+    }
+
+    function drawPlayerTwoScore() {
+        context.font = "80px Silkscreen";
+        context.fillStyle = "ffffff";
+        context.fillText(playerTwoScore.toString(), canvas.width * 3 / 4 - 40, 75);
+    }
+
     function drawNet() {
-        // context.rect(canvas.width/2 - 3, 0, 6, canvas.height);
-        // context.fillStyle = "ffffff";
-        // context.fill();
-        var netWidth = 4;
+        var netWidth = 10;
         var netXPosition = (canvas.width - netWidth)/2;
         var netYPosition = 0;
-        var step = canvas.height/20; // how many net segments
+        var step = canvas.height/10; // how many net segments
         while (netYPosition < canvas.height) {
             context.beginPath();
             context.rect(netXPosition, netYPosition + step/4, netWidth, step/2);
@@ -118,21 +138,31 @@
     function draw() {
         context.clearRect(0, 0, canvas.width, canvas.height);
         drawNet();
+        drawPlayerOneScore();
+        drawPlayerTwoScore();
         drawPlayerOne();
         drawPlayerTwo();
         drawBall();
 
+        if (playerOneScore == 11) {
+            alert("Player One Wins. Play again?"); 
+            document.location.reload();
+        } else if (playerTwoScore == 11) {
+            alert("Player Two Wins. Play again?");
+            document.location.reload();
+        }
+
         // ball moving
-        if (ballY + dy > canvas.height - ballRadius || ballY + dy < ballRadius) {
+        if (ballY + dy > canvas.height - ballSize / 2 || ballY + dy < ballSize / 2) {
             dy = -dy;
         } 
-        if (ballX > canvas.width - ballRadius) {
-            alert("P1 SCORED");
-            document.location.reload();
-        } else if (ballX < ballRadius){
-            alert("P2 SCORED");
-            document.location.reload();
-        } else if (ballX < 5 + ballRadius + playerWidth && ballY > playerOneY && ballY < playerOneY + playerHeight) {
+        if (ballX > canvas.width - ballSize / 2) {
+            playerOneScore += 1;
+            resetBall();
+        } else if (ballX < 0){
+            playerTwoScore += 1;
+            resetBall();
+        } else if (ballX < 5 + playerWidth && ballY > playerOneY && ballY < playerOneY + playerHeight) {
             dx = -dx;
         } else if (ballX > canvas.width - 5 - playerWidth && ballY > playerTwoY && ballY < playerTwoY + playerHeight){
             dx = -dx;
