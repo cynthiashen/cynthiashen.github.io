@@ -18,8 +18,8 @@
     var context = canvas.getContext("2d");
 
     // ball variables
-    var dx = 4;
-    var dy = 4;
+    var dx = 5;
+    var dy = 5;
     var ballSize = 15; 
     var ballX = (canvas.width - ballSize) / 2;
     var ballY = (canvas.height - ballSize) / 2;
@@ -75,11 +75,11 @@
         ballX = (canvas.width - ballSize) / 2;
         ballY = (canvas.height - ballSize) / 2;
         if ((playerOneScore + playerTwoScore) % 2 == 0) {
-            dx = 4; 
-            dy = 4;
+            dx = 5; 
+            dy = 5;
         } else {
-            dx = -4; 
-            dy = 4; 
+            dx = -5; 
+            dy = 5; 
         }
     }
 
@@ -162,9 +162,9 @@
         } else if (ballX < 0){
             playerTwoScore += 1;
             resetBall();
-        } else if (ballX < 5 + playerWidth && ballY > playerOneY && ballY < playerOneY + playerHeight) {
+        } else if (ballX < 5 + playerWidth && ballY + (ballSize / 2) > playerOneY && ballY + (ballSize / 2) < playerOneY + playerHeight) {
             dx = -dx;
-        } else if (ballX > canvas.width - 5 - playerWidth && ballY > playerTwoY && ballY < playerTwoY + playerHeight){
+        } else if (ballX > canvas.width - 5 - playerWidth && ballY + (ballSize / 2) > playerTwoY && ballY + (ballSize / 2) < playerTwoY + playerHeight){
             dx = -dx;
         }
 
