@@ -175,9 +175,9 @@
             playerTwoY -= 5;
         }
 
-        if (dy > 0 && playerOneY < canvas.height - playerHeight) {
+        if (ballY > playerOneY && playerOneY < canvas.height - playerHeight) {
             playerOneY += 3;
-        } else if (dy < 0 && playerOneY > 0 ) {
+        } else if (ballY < playerOneY && playerOneY > 0 ) {
             playerOneY -=3;
         }
 
