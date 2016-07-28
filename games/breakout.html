@@ -125,16 +125,10 @@
         }
     }
 
-    function drawScore() {
-        context.font = "16px Arial";
-        context.fillStyle = "#990000";
-        context.fillText = ("Score: "+ score, 8, 20);
-    }
 
     // redraw the screen
     function draw() {
         context.clearRect(0, 0, canvas.width, canvas.height);
-        drawScore();
         drawBricks();
         drawPaddle();
         drawBall();

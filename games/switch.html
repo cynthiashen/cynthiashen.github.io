@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Platform</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="400"></canvas>
+
+<script>
+	// JavaScript code goes here
+	var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    // player variables
+    var playerSize = 30;
+    var playerY = 0;
+
+    // top obstacle variables
+    var topObstacleX = 0; 
+    var topObstacleY = 0;
+
+
+    // bottom obstacle variables
+    var bottomObstacleX = 0; 
+    var bottomObstacleY = canvas.height - playerSize; 
+
+    // key handler variables
+    var spacePressed = false;
+
+    document.addEventListener("keydown", keyDownHandler, false);
+    document.addEventListener("keyup", keyUpHandler, false);
+
+    function random() {
+        return Math.floor(Math.random() * 100) + 1);
+    }
+
+    function keyDownHandler(e) {
+        if(e.keyCode == 32) {
+            spacePressed = true;
+        }
+    }
+
+    function keyUpHandler(e) {
+        if(e.keyCode == 32) {
+            spacePressed = false;
+        }
+    }
+
+    function drawPlayer(x, y) {
+        context.beginPath();
+        context.rect(x, y, playerSize, playerSize);
+        context.fillStyle = "#990000";
+        context.fill();
+        context.closePath();
+    }
+
+    function drawObstacle(x, y) {
+        context.beginPath();
+        context.rect(x, y, 30, 30);
+        context.fillStyle = "#000099";
+        context.fill();
+        context.closePath();
+    }
+
+
+    // redraw the screen
+    function draw() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        drawPlayer(canvas.width - playerSize, playerY, playerSize, playerSize);
+        drawObstacle(topObstacleX, topObstacleY, playerSize, playerSize);
+        drawObstacle(bottomObstacleX, bottomObstacleY, playerSize, playerSize);
+        if (spacePressed) {
+            if (playerY == 0) {
+                playerY = canvas.height - playerSize;
+            } else {
+                playerY = 0;
+            }
+        }
+
+        if (topObstacleX >= canvas.width) {
+            topObstacleX = canvas.height - random();
+        } else { 
+            topObstacleX += 5;
+        }
+
+        if (bottomObstacleX >= canvas.width) {
+            bottomObstacleX = canvas.height - random();
+        } else { 
+            bottomObstacleX += 5;
+        }
+
+    }
+
+    setInterval(draw, 10);
+
+</script>
+
+</body>
+</html>

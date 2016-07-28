@@ -145,10 +145,10 @@
         drawBall();
 
         if (playerOneScore == 11) {
-            alert("Computer Wins. Play again?"); 
+            alert("Player One Wins. Play again?"); 
             document.location.reload();
         } else if (playerTwoScore == 11) {
-            alert("Player Wins. Play again?");
+            alert("Player Two Wins. Play again?");
             document.location.reload();
         }
 
@@ -174,11 +174,10 @@
         } else if (upPressed && playerTwoY > 0) {
             playerTwoY -= 5;
         }
-
-        if (ballY > playerOneY && playerOneY < canvas.height - playerHeight) {
-            playerOneY += 3;
-        } else if (ballY < playerOneY && playerOneY > 0 ) {
-            playerOneY -=3;
+        if (sPressed && playerOneY < canvas.height - playerHeight) {
+            playerOneY += 5;
+        } else if (wPressed && playerOneY > 0) {
+            playerOneY -= 5;
         }
 
         ballX += dx;
