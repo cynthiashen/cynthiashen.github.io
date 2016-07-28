@@ -15,9 +15,9 @@
 <script>
 	var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    var playerSize = 30;
+    var playerSize = 20;
     var playerY = 0;
-    var topObstacleX = -random(); 
+    var topObstacleX = -random(300, 600); 
     var topObstacleY = 0;
     var bottomObstacleX = 0; 
     var bottomObstacleY = canvas.height - playerSize; 
@@ -25,14 +25,11 @@
     document.addEventListener("keydown", keyDownHandler, false);
     // document.addEventListener("keyup", keyUpHandler, false);
 
-    function random() {
-        return Math.floor(Math.random() * 1000 + 100);
+    function random(a, b) {
+        return Math.floor(Math.random()) * (a - b) + a;
     }
 
     function keyDownHandler(e) {
-        // if(e.keyCode == 32) {
-        //     spacePressed = true;
-        // }
         if (e.keyCode == 32) {
             if (playerY == 0) {
                 playerY = canvas.height - playerSize;
@@ -68,13 +65,13 @@
         }
 
         if (topObstacleX >= canvas.width) {
-            topObstacleX = Math.min(-random(), bottomObstacleX - random());
+            topObstacleX = -random(100, 300);
         } else { 
             topObstacleX += 8;
         }
 
         if (bottomObstacleX >= canvas.width) {
-            bottomObstacleX = Math.min(-random(), bottomObstacleX - random());
+            bottomObstacleX = -random(100, 300);
         } else { 
             bottomObstacleX += 8;
         }
