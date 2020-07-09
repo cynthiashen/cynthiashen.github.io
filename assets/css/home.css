@@ -32,10 +32,28 @@
 }
 
 
-
-
-h1 {color: blue;
-	text-align: center;
+h1 {color: purple;
 	font-family: "roboto_thin";}
 
-p {text-align: center;}
+p {font-family: "roboto_light";}
+
+img {vertical-align: middle;
+    width: 300px;
+    padding-left: 10px}
+
+.container {
+  width: 80%;
+  height: 600px;
+  background: pink;
+  padding: 10px;
+}
+
+.intro-container {
+  color: purple;
+  width: 20%;
+  background: white;
+  padding: 10px;
+  font-family: "roboto_light";
+  float: left;
+}
+
