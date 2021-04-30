@@ -16,6 +16,7 @@
 	// JavaScript code goes here
 	var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
+    var started = false;
 
     var score = 0;
 
@@ -56,6 +57,7 @@
     document.addEventListener("keyup", keyUpHandler, false);
 
     function keyDownHandler(e) {
+        started = true
         if(e.keyCode == 39) {
             rightPressed = true;
         } else if (e.keyCode == 37) {
@@ -133,31 +135,33 @@
         drawPaddle();
         drawBall();
         collisionDetection();
-        // ball moving
-        if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-            dx = -dx; 
-        }
-        if(y + dy < ballRadius) {
-            dy = -dy;
-        } else if (y + dy > canvas.height - ballRadius - paddleHeight) {
-            if (x > paddleX && x < paddleX + paddleWidth) {
-                dy = -dy;
-            } else if (y + dy > canvas.height) {
-                alert("GAME OVER");
-                document.location.reload();
+        if (started) {
+            // ball moving
+            if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+                dx = -dx; 
             }
+            if(y + dy < ballRadius) {
+                dy = -dy;
+            } else if (y + dy > canvas.height - ballRadius - paddleHeight) {
+                if (x > paddleX && x < paddleX + paddleWidth) {
+                    dy = -dy;
+                } else if (y + dy > canvas.height) {
+                    alert("GAME OVER");
+                    started = false
+                    document.location.reload();
+                }
+            }
+            // paddle moving
+            if (rightPressed && paddleX < canvas.width - paddleWidth) {
+                paddleX += 5;
+            } else if (leftPressed && paddleX > 0) {
+                paddleX -= 5; 
+            }
+            x += dx;
+            y += dy; 
         }
-        // paddle moving
-        if (rightPressed && paddleX < canvas.width - paddleWidth) {
-            paddleX += 5;
-        } else if (leftPressed && paddleX > 0) {
-            paddleX -= 5; 
-        }
-        x += dx;
-        y += dy; 
         requestAnimationFrame(draw);
     }
-
     draw();
 </script>
 

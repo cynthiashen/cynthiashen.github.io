@@ -15,6 +15,7 @@
 <script>
 	var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
+    var started = false;
 
     // ball variables
     var dx = 5;
@@ -43,6 +44,7 @@
     document.addEventListener("keyup", keyUpHandler, false);
 
     function keyDownHandler(e) {
+        started = true
         if(e.keyCode == 38) {
             upPressed = true;
         } else if (e.keyCode == 40) {
@@ -145,42 +147,48 @@
 
         if (playerOneScore == 11) {
             alert("Player One Wins. Play again?"); 
+            started = false;
             document.location.reload();
         } else if (playerTwoScore == 11) {
             alert("Player Two Wins. Play again?");
+            started = false;
             document.location.reload();
         }
 
-        // ball moving
-        if (ballY + dy > canvas.height - ballSize / 2 || ballY + dy < ballSize / 2) {
-            dy = -dy;
-        } 
-        if (ballX > canvas.width - ballSize / 2) {
-            playerOneScore += 1;
-            resetBall();
-        } else if (ballX < 0){
-            playerTwoScore += 1;
-            resetBall();
-        } else if (ballX < 5 + playerWidth && ballY + (ballSize / 2) > playerOneY && ballY + (ballSize / 2) < playerOneY + playerHeight) {
-            dx = -dx;
-        } else if (ballX > canvas.width - 5 - playerWidth && ballY + (ballSize / 2) > playerTwoY && ballY + (ballSize / 2) < playerTwoY + playerHeight){
-            dx = -dx;
+
+        if (started) {
+            // ball moving
+            if (ballY + dy > canvas.height - ballSize / 2 || ballY + dy < ballSize / 2) {
+                dy = -dy;
+            } 
+            if (ballX > canvas.width - ballSize / 2) {
+                playerOneScore += 1;
+                resetBall();
+            } else if (ballX < 0){
+                playerTwoScore += 1;
+                resetBall();
+            } else if (ballX < 5 + playerWidth && ballY + (ballSize / 2) > playerOneY && ballY + (ballSize / 2) < playerOneY + playerHeight) {
+                dx = -dx;
+            } else if (ballX > canvas.width - 5 - playerWidth && ballY + (ballSize / 2) > playerTwoY && ballY + (ballSize / 2) < playerTwoY + playerHeight){
+                dx = -dx;
+            }
+
+            // players moving
+            if (downPressed && playerTwoY < canvas.height - playerHeight) {
+                playerTwoY += 5;
+            } else if (upPressed && playerTwoY > 0) {
+                playerTwoY -= 5;
+            }
+            if (sPressed && playerOneY < canvas.height - playerHeight) {
+                playerOneY += 5;
+            } else if (wPressed && playerOneY > 0) {
+                playerOneY -= 5;
+            }
+
+            ballX += dx;
+            ballY += dy;
         }
 
-        // players moving
-        if (downPressed && playerTwoY < canvas.height - playerHeight) {
-            playerTwoY += 5;
-        } else if (upPressed && playerTwoY > 0) {
-            playerTwoY -= 5;
-        }
-        if (sPressed && playerOneY < canvas.height - playerHeight) {
-            playerOneY += 5;
-        } else if (wPressed && playerOneY > 0) {
-            playerOneY -= 5;
-        }
-
-        ballX += dx;
-        ballY += dy;
         requestAnimationFrame(draw);
     }
 
