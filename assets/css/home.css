@@ -73,22 +73,11 @@ p {font-family: "roboto_light";}
   position:relative;
 }
 
-/*TODO: look into better ways to group very similar divs (banner and banner2 for example) 
-  - is it better to set background totally separately? does it need to be another div class?
-*/
-
 .banner {
   width:100%;
   height:500px;
   position:relative;
   background:#9ecde6;
-}
-
-.banner2 {
-  width:100%;
-  height:500px;
-  position:relative;
-  background:#cce3f0;
 }
 
 .banner-full-image{
@@ -118,10 +107,9 @@ p {font-family: "roboto_light";}
   line-height:40px;
   width:300px;
   top:10%;
-  left:10%;
+  left:5%;
   padding:30px;
   display:inline-block;
-
 }
 
 .banner-section-image {
