@@ -47,6 +47,7 @@ p {font-family: "roboto_light";}
   height: 600px;
   background: pink;
   padding: 10px;
+  position: relative;
 }
 
 .intro-container {
@@ -65,14 +66,8 @@ p {font-family: "roboto_light";}
   position: static;
   font-size: 50px;
   float: left;
-}
-
-.menu-bar {
-  font-family:"roboto_thin";
-  color: purple;
-  position: static;
-  font-size: 25px;
-  float: right;
+  height: 80px;
+  vertical-align:center;
 }
 
 .top-banner{
@@ -86,5 +81,24 @@ a:link {
 
 a:visited {
   text-decoration: none;
+  color: none;
 }
 
+li {
+  padding-left: 8px;
+  display:inline-block;
+  text-align: center;
+  line-height:80px;
+  height:80px;
+}
+
+nav {
+  list-style-type: none;
+  font-family:"roboto_thin";
+  color: purple;
+  position: static;
+  vertical-align:center;
+  font-size: 25px;
+  height: 80px;
+  float: right;
+}
