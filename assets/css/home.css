@@ -142,7 +142,7 @@ p {font-family: "roboto_light";}
   background-color: white;
   font-size: 16px;
   border-radius: 5px;
-  padding: 20px 3px;
+  padding: 3px 20px;
 }
 
 .banner-button:hover {
