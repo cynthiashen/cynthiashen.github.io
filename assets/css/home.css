@@ -41,6 +41,11 @@ h1 {
   text-align:left;
 }
 
+* {
+  font-family: "roboto";
+  
+}
+
 p {font-family: "roboto_light";}
 
 .home {
@@ -56,6 +61,7 @@ p {font-family: "roboto_light";}
   z-index: 999;
   background: white;
   opacity: 80%;
+  overflow: hidden;
 }
 
 .left-banner-content {
@@ -168,6 +174,7 @@ p {font-family: "roboto_light";}
   padding: 10px;
   position: relative;
   top: 80px;
+  overflow: hidden;
 }
 
 .container-text {
