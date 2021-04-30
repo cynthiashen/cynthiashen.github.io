@@ -31,6 +31,9 @@
     font-style: normal;
 }
 
+:root {
+  --brown: #523626;
+}
 
 h1 {
   color: purple;
