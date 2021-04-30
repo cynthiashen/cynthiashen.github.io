@@ -37,6 +37,7 @@ h1 {color: purple;
 
 p {font-family: "roboto_light";}
 
+
 .about-image {vertical-align: middle;
     width: 300px;
     padding-left: 10px}
@@ -58,13 +59,32 @@ p {font-family: "roboto_light";}
   float: left;
 }
 
+.home {
+  font-family:"roboto_regular";
+  color: purple;
+  position: static;
+  font-size: 50px;
+  float: left;
+}
+
+.menu-bar {
+  font-family:"roboto_thin";
+  color: purple;
+  position: static;
+  font-size: 25px;
+  float: right;
+}
+
+.top-banner{
+  width:100%;
+  max-height:500px;
+}
+
 a:link {
-    color: blue;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:visited {
-    color: blue;
-    text-decoration: none;
+  text-decoration: none;
 }
 
