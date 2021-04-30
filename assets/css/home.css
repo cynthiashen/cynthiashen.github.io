@@ -42,8 +42,7 @@ h1 {
 }
 
 * {
-  font-family: "roboto";
-  
+  font-family: "roboto_regular";
 }
 
 p {font-family: "roboto_light";}
@@ -100,7 +99,7 @@ p {font-family: "roboto_light";}
   position: absolute;
   text-align: center;
   font-size: 25px;
-  font-family: "roboto";
+  font-family: "roboto_regular";
   color: #0f4561;
   line-height: 40px;
   width: 300px;
@@ -112,7 +111,7 @@ p {font-family: "roboto_light";}
   position: relative;
   text-align: center;
   font-size: 25px;
-  font-family: "roboto";
+  font-family: "roboto_regular";
   color: #0f4561;
   line-height: 40px;
   width: 300px;
@@ -173,7 +172,6 @@ p {font-family: "roboto_light";}
   background: pink;
   padding: 10px;
   position: relative;
-  top: 80px;
   overflow: hidden;
 }
 
@@ -203,6 +201,7 @@ li {
   text-align: center;
   line-height: 80px;
   height: 80px;
+  font-family: "roboto_thin";
 }
 
 nav {
