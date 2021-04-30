@@ -87,6 +87,7 @@ p {font-family: "roboto_light";}
   height: 500px;
   position: relative;
   background: #9ecde6;
+  text-align: center;
 }
 
 .banner-full-image{
@@ -115,8 +116,7 @@ p {font-family: "roboto_light";}
   color: #0f4561;
   line-height: 40px;
   width: 300px;
-  top: 10%;
-  left: 5%;
+  margin: 0 auto;
   padding: 30px;
   display: inline-block;
 }
