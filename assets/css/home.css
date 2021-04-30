@@ -40,6 +40,16 @@ h1 {
 
 p {font-family: "roboto_light";}
 
+.top-banner{
+  width:100%;
+  max-height:500px;
+}
+
+.banner-image{
+  object-fit: cover;
+  width: 100%; 
+  max-height: 500px;
+}
 
 .container-image{vertical-align: middle;
     width: 300px;
@@ -67,23 +77,12 @@ p {font-family: "roboto_light";}
 .home {
   font-family:"roboto_regular";
   color: purple;
-  position: static;
+  position: sticky;
+  top:0px;
   font-size: 50px;
   float: left;
   height: 80px;
   vertical-align: center;
-}
-
-.top-banner{
-  position: static;
-  width:100%;
-  max-height:500px;
-}
-
-.banner-image{
-  object-fit: cover;
-  width: 100%; 
-  max-height: 500px;
 }
 
 a:link {
@@ -107,7 +106,8 @@ nav {
   list-style-type: none;
   font-family: "roboto_thin";
   color: purple;
-  position: static;
+  position: sticky;
+  top:0px;
   vertical-align: center;
   font-size: 25px;
   height: 80px;
