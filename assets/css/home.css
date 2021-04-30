@@ -32,13 +32,16 @@
 }
 
 
-h1 {color: purple;
-	font-family: "roboto_thin";}
+h1 {
+  color: purple;
+  font-family: "roboto_thin";
+  text-align:left;
+}
 
 p {font-family: "roboto_light";}
 
 
-.about-image {vertical-align: middle;
+.container-image{vertical-align: middle;
     width: 300px;
     padding-left: 10px}
 
@@ -48,9 +51,10 @@ p {font-family: "roboto_light";}
   background: pink;
   padding: 10px;
   position: relative;
+  top:80px;
 }
 
-.intro-container {
+.container-text {
   color: purple;
   width: 20%;
   min-width:200px;
@@ -67,12 +71,19 @@ p {font-family: "roboto_light";}
   font-size: 50px;
   float: left;
   height: 80px;
-  vertical-align:center;
+  vertical-align: center;
 }
 
 .top-banner{
+  position: static;
   width:100%;
   max-height:500px;
+}
+
+.banner-image{
+  object-fit: cover;
+  width: 100%; 
+  max-height: 500px;
 }
 
 a:link {
@@ -88,16 +99,16 @@ li {
   padding-left: 8px;
   display:inline-block;
   text-align: center;
-  line-height:80px;
-  height:80px;
+  line-height: 80px;
+  height: 80px;
 }
 
 nav {
   list-style-type: none;
-  font-family:"roboto_thin";
+  font-family: "roboto_thin";
   color: purple;
   position: static;
-  vertical-align:center;
+  vertical-align: center;
   font-size: 25px;
   height: 80px;
   float: right;
