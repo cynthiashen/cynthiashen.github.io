@@ -19,7 +19,7 @@
 
 .banner {
   width: 100%;
-  min-height: 500px;
+  min-height: 700px;
   position: relative;
   background: #9ecde6;
   text-align: center;
@@ -28,7 +28,7 @@
 .banner-full-image{
   object-fit: cover;
   width: 100%; 
-  height: 500px;
+  height: 700px;
 }
 
 .banner-text{
@@ -52,7 +52,8 @@
   line-height: 40px;
   width: 300px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 40px;
+  top: 125px;
   display: inline-block;
 }
 
@@ -65,9 +66,9 @@
 
 .banner-image {
   position: absolute;
-  top: 50px;
+  top: 15%;
   left: 50%;
-  height: 400px;
+  height: 70%;
   text-align: center;
 }
 
@@ -78,6 +79,8 @@
   font-size: 16px;
   border-radius: 5px;
   padding: 3px 20px;
+  position: relative;
+  top: 20px;
 }
 
 .banner-button:hover {
@@ -91,3 +94,14 @@
   transform: translateY(4px);
 }
 
+nav {
+  list-style-type: none;
+  font-family: "roboto_thin";
+  top: 0px;
+  vertical-align: center;
+  font-size: 25px;
+  height: 80px;
+  float: right;
+  overflow: hidden;
+  padding-right:40px;
+}
