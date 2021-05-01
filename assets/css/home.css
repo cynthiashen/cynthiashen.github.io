@@ -63,6 +63,7 @@ p {font-family: "roboto_light";}
   background: white;
   opacity: 80%;
   overflow: hidden;
+  padding:10px;
 }
 
 .left-banner-content {
@@ -206,6 +207,7 @@ nav {
   height: 80px;
   float: right;
   overflow: hidden;
+  padding-right:40px;
 }
 
 img:hover {
