@@ -2,7 +2,7 @@
 
 .home {
   font-family:"roboto_regular";
-  color: #4081a3;
+/*  color: #4081a3;*/
   position: sticky;
   top:0px;
   font-size: 50px;
@@ -89,6 +89,7 @@
   color: white;
   cursor: pointer;
 }
+
 .banner-button:active {
   opacity: 100%;
   transform: translateY(4px);
@@ -104,4 +105,13 @@ nav {
   float: right;
   overflow: hidden;
   padding-right:40px;
+}
+
+.nav-li {
+  padding-left: 8px;
+  display: inline-block;
+  text-align: center;
+  line-height: 80px;
+  height: 80px;
+  font-family: "roboto_thin";
 }
