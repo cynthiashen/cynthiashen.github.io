@@ -23,6 +23,8 @@
   position: relative;
   background: #9ecde6;
   text-align: center;
+  display:block;
+  overflow:auto;
 }
 
 .banner-full-image{
@@ -113,5 +115,25 @@ nav {
   text-align: center;
   line-height: 80px;
   height: 80px;
+  font-family: "roboto_thin";
+}
+
+.footer {
+  bottom:0;
+  display: flex;
+  width: 100%; 
+  justify-content: center;
+}
+
+.nav-footer {
+  list-style-type: none;
+}
+
+.footer-li {
+  padding-left: 8px;
+  display: inline-block;
+  text-align: center;
+  line-height: 80px;
+  height: 25px;
   font-family: "roboto_thin";
 }
