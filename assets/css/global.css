@@ -36,6 +36,16 @@
   --main-color: #4081a3;
 }
 
+/*html, body {
+  min-height: 100%;
+  height: 100%;
+}
+*/
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 * {
   font-family: "roboto_regular";
   margin:0;
