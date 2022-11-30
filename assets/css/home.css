@@ -8,12 +8,10 @@
   font-size: 50px;
   float: left;
   min-height: 80px;
-  vertical-align: center;
   width: 100%;
   z-index: 999;
   background: white;
   opacity: 80%;
-  overflow: hidden;
   padding:10px;
   display: flex;
   justify-content: space-between;
@@ -115,7 +113,6 @@ nav {
   font-size: 25px;
   height: 80px;
   float: right;
-  overflow: hidden;
   padding-right:40px;
 }
 
@@ -127,6 +124,48 @@ nav {
   height: 80px;
   font-family: "roboto_thin";
 }
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.nav-dropdown-li {
+  padding-left: 8px;
+  display: inline-block;
+  text-align: center;
+  line-height: 80px;
+  height: 80px;
+  font-family: "roboto_regular";
+}
+
+.nav-dropdown-li:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.nav-dropdown-content {
+  display: none;
+  opacity: 100%;
+  position: absolute;
+  background-color: #0f4561;
+  min-width: 140px;
+  list-style-type: none;
+  margin: 10px;
+}
+
+/* Links inside the dropdown */
+.nav-dropdown-content a {
+  color: white;
+  padding: 4px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {display: block;}
 
 .footer {
   bottom:0;
