@@ -8,6 +8,7 @@ import Books from './pages/Books'
 import Cycling from './pages/Cycling'
 import Food from './pages/Food'
 import Yarn from './pages/Yarn'
+import Running from './pages/Running'
 import Cat from './pages/Cat'
 import Projects from './pages/Projects'
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/interests/books" element={<Books />} />
           <Route path="/interests/cycling" element={<Cycling />} />
+          <Route path="/interests/running" element={<Running />} />
           <Route path="/interests/food" element={<Food />} />
           <Route path="/interests/knitting" element={<Yarn />} />
           <Route path="/pancake" element={<Cat />} />

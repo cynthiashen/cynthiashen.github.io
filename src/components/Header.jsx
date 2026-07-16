@@ -36,6 +36,11 @@ export default function Header() {
               </NavLink>
             </li>
             <li>
+              <NavLink to="/interests/running" className={({ isActive }) => (isActive ? 'nav-active' : undefined)}>
+                running
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/interests/food" className={({ isActive }) => (isActive ? 'nav-active' : undefined)}>
                 food
               </NavLink>

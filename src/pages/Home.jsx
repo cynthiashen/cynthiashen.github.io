@@ -46,6 +46,18 @@ export default function Home() {
         </div>
 
         <div className="banner-section">
+          <img className="banner-section-image" src="/assets/images/home/cynthia_run.jpg" alt="Running" />
+          <br />I like to run!
+          <br />
+          <Link to="/interests/running">
+            <div className="banner-button">read more</div>
+          </Link>
+          <a href="https://www.strava.com/athletes/25619535" target="_blank" rel="noopener noreferrer">
+            <div className="banner-button">check out my strava</div>
+          </a>
+        </div>
+
+        <div className="banner-section">
           <img className="banner-section-image" src="/assets/images/home/books.png" alt="Books" />
           <br />I like to read!
           <br />
@@ -58,7 +70,7 @@ export default function Home() {
         </div>
 
         <div className="banner-section">
-          <img className="banner-section-image" src="/assets/images/interests/yarn_1.jpg" alt="Yarn" />
+          <img className="banner-section-image" src="/assets/images/home/knitting.jpg" alt="Yarn" />
           <br />I like to craft!
           <br />
           <Link to="/interests/knitting">
