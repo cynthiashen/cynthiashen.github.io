@@ -8,14 +8,17 @@ export default function About() {
       <h1>about me</h1>
       <div className="container">
         <div className="container-text">
-          I grew up in Cupertino, graduated from UC Berkeley, and now live in San Francisco, so you could definitely say I'm a Bay Area girl.
+          I grew up in Cupertino, graduated from UC Berkeley, and lived in San Francisco for 7 years before moving to New York City in 2026, where I currently reside.
           <br /><br />
-          I love cooking, reading, knitting, crocheting, yoga, math, trivia, crosswords, climbing, and biking! I'm hoping this space will be a fun way for me to share some of the things I'm passionate about with the world.
+          I am a software engineer with 8+ years of experience at several different startups. Idecided to build this website in part to learn more about web development, but moreso to exercise my creativity.
+
           <br /><br />
-          While I am a full time software engineer, I have minimal front end experience and am putting together this website as a way to learn more about web development as well as exercise my creativity. We'll see how this goes!
+          I sometimes joke with my friends that I'm a bit of a hobby collector. I love cooking, baking, reading, knitting, crocheting, math, trivia, crosswords, skiing, biking, and running! 
+          Most recently, I've taken up an interest in photography, movies, and wine tasting. I'm hoping this space will be a fun way for me to share some of the things I'm passionate about with the world.
+
         </div>
         <div style={{ marginTop: '15px' }}>
-          <img className="container-image" src="/assets/images/cynthia_about.jpg" alt="Cynthia" />
+          <img className="container-image" src="/assets/images/cynthia.jpg" alt="Cynthia" />
         </div>
       </div>
     </>

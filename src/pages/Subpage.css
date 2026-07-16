@@ -1,9 +1,11 @@
 h1 {
   font-family: 'Roboto', sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   text-align: left;
-  padding-left: 10px;
-  border-bottom: 5px double var(--background-color);
+  margin: 0;
+  padding: 20px 16px 12px;
+  font-size: 4rem;
+  border-top: 5px double var(--background-color);
 }
 
 .container-image {
@@ -58,9 +60,8 @@ h1 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.75rem;
-    padding-left: 16px;
-    padding-right: 16px;
+    font-size: 2.75rem;
+    padding: 16px 16px 8px;
   }
 
   .container {

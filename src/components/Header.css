@@ -20,6 +20,13 @@
   color: inherit;
 }
 
+.nav-active,
+.home a.nav-active,
+.home .nav-dropdown-content a.nav-active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 nav {
   list-style-type: none;
   font-family: 'Roboto', sans-serif;

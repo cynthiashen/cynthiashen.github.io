@@ -23,8 +23,8 @@
 .banner-light {
   background: #cce3f0;
   min-height: 700px;
-  padding: 40px 16px;
-  gap: 16px;
+  padding: 40px 24px;
+  gap: 24px;
   align-content: center;
 }
 
@@ -80,8 +80,16 @@
   font-family: 'Roboto', sans-serif;
   color: #0f4561;
   line-height: 40px;
-  padding: 24px 16px;
+  padding: 28px 20px 36px;
   box-sizing: border-box;
+  background: white;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.banner-section:hover {
+  border-color: #0f4561;
 }
 
 .banner-section-image {
@@ -90,6 +98,11 @@
   height: 300px;
   width: 300px;
   max-width: 100%;
+  border-radius: 12px;
+}
+
+.banner-section .banner-button {
+  background-color: #cce3f0;
 }
 
 .banner-button {
