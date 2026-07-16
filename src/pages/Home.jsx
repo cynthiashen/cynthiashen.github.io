@@ -11,7 +11,7 @@ export default function Home() {
 
       <div className="banner banner-intro">
         <div className="banner-text">
-          I'm Cynthia, a bay area native currently residing in San Francisco.
+          I'm Cynthia, a bay area native currently residing in New York City.
           <br />
           <Link to="/about">
             <button className="banner-button">read more</button>
