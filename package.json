@@ -1,4 +1,5 @@
 {
+  "homepage": "https://cynthiashen.github.io",
   "name": "cynthiashen-website",
   "private": true,
   "version": "1.0.0",
@@ -6,7 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "mkdir -p public && (cp -r assets public/ 2>/dev/null || true) && (cp -r games public/ 2>/dev/null || true) && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
