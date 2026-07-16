@@ -1,0 +1,188 @@
+@import global.css;
+
+.home {
+  font-family:"roboto_regular";
+/*  color: #4081a3;*/
+  position: sticky;
+  top:0px;
+  font-size: 50px;
+  float: left;
+  min-height: 80px;
+  width: 100%;
+  z-index: 999;
+  background: white;
+  opacity: 80%;
+  padding:10px;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.banner {
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+  background: #9ecde6;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items:  center;
+  align-content:  center;
+}
+
+.banner-full-image{
+  object-fit: cover;
+  width: 100%; 
+  height: 700px;
+}
+
+.banner-text{
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  font-family: "roboto_regular";
+  color: #0f4561;
+  line-height: 40px;
+  width: 300px;
+  top: 30%;
+  left: 10%;
+}
+
+.banner-section{
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+  font-family: "roboto_regular";
+  color: #0f4561;
+  line-height: 40px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.banner-section-image {
+  object-fit: cover;
+  opacity: 95%;
+  height: 300px;
+  width: 300px;
+}
+
+.banner-image {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  height: 70%;
+  text-align: center;
+}
+
+.banner-button {
+  border: none;
+  color: #0f4561;
+  background-color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 3px 20px;
+  position: relative;
+  top: 20px;
+}
+
+.banner-button:hover {
+  opacity: 90%;
+  background-color: #0f4561;
+  color: white;
+  cursor: pointer;
+}
+
+.banner-button:active {
+  opacity: 100%;
+  transform: translateY(4px);
+}
+
+nav {
+  list-style-type: none;
+  font-family: "roboto_thin";
+  top: 0px;
+  vertical-align: center;
+  font-size: 25px;
+  height: 80px;
+  float: right;
+  padding-right:40px;
+}
+
+.nav-li {
+  padding-left: 8px;
+  display: inline-block;
+  text-align: center;
+  line-height: 80px;
+  height: 80px;
+  font-family: "roboto_thin";
+}
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.nav-dropdown-li {
+  padding-left: 8px;
+  display: inline-block;
+  text-align: center;
+  line-height: 80px;
+  height: 80px;
+  font-family: "roboto_regular";
+}
+
+.nav-dropdown-li:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.nav-dropdown-content {
+  display: none;
+  opacity: 100%;
+  position: absolute;
+  background-color: #0f4561;
+  min-width: 140px;
+  list-style-type: none;
+  margin: 10px;
+}
+
+/* Links inside the dropdown */
+.nav-dropdown-content a {
+  color: white;
+  padding: 4px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {display: block;}
+
+.footer {
+  bottom:0;
+  display: flex;
+  width: 100%; 
+  justify-content: center;
+}
+
+.nav-footer {
+  list-style-type: none;
+}
+
+.footer-li {
+  padding-left: 8px;
+  display: inline-flex;
+  text-align: center;
+  line-height: 80px;
+  height: 25px;
+  font-family: "roboto_thin";
+}
