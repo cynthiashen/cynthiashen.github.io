@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Platform</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="400"></canvas>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var started = false;
+    var playerSize = 20;
+    var playerY = 0;
+    var topObstacleX = -random(300, 600); 
+    var topObstacleY = 0;
+    var bottomObstacleX = 0; 
+    var bottomObstacleY = canvas.height - playerSize; 
+    // key handler
+    document.addEventListener("keydown", keyDownHandler, false);
+
+    function random(a, b) {
+        return Math.floor(Math.random()) * (a - b) + a;
+    }
+
+    function keyDownHandler(e) {
+        started = true
+        if (e.keyCode == 32) {
+            if (playerY == 0) {
+                playerY = canvas.height - playerSize;
+            } else {
+                playerY = 0;
+            }
+        }
+    }
+
+
+    function drawSquare(x, y, color) {
+        context.beginPath();
+        context.rect(x, y, playerSize, playerSize);
+        context.fillStyle = color;
+        context.fill();
+        context.closePath();
+    }
+
+    function draw() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        drawSquare(canvas.width - playerSize, playerY, "#990000");
+        if (started) {
+            console.log('started')
+            drawSquare(topObstacleX, topObstacleY, "#000099");
+            drawSquare(bottomObstacleX, bottomObstacleY, "#000099");
+            if (playerY == 0) {
+                if (topObstacleX > canvas.width - playerSize) {
+                    alert("You lost!");
+                    started = false
+                    document.location.reload();
+                }
+            } else if (playerY == canvas.height - playerSize) {
+                if (bottomObstacleX > canvas.width - playerSize) {
+                    alert("You lost!");
+                    started = false
+                    document.location.reload();
+                }
+            }
+
+            if (topObstacleX >= canvas.width) {
+                topObstacleX = -random(100, 300);
+            } else { 
+                topObstacleX += 8;
+            }
+
+            if (bottomObstacleX >= canvas.width) {
+                bottomObstacleX = -random(100, 300);
+            } else { 
+                bottomObstacleX += 8;
+            }
+        }
+    }
+
+    setInterval(draw, 10);
+
+</script>
+
+</body>
+</html>
