@@ -21,14 +21,10 @@ npm run dev
 npm run build
 ```
 
-The build copies `assets/` and `games/` to `public/` automatically, then outputs to `dist/`.
+The build copies `assets/` and `games/` to `public/` automatically, then outputs to `dist/`. A `404.html` is generated so direct links to routes like `/about` work on GitHub Pages.
 
 ## GitHub Pages Deployment
 
-For GitHub Pages (SPA with client-side routing):
+Pushes to `master` build and deploy via GitHub Actions (`.github/workflows/deploy.yml`).
 
-1. Run `npm run build`
-2. Deploy the contents of the `dist/` folder to your repository root
-3. A `404.html` is automatically generated (copy of `index.html`) so direct links to routes like `/about` work
-
-You can use GitHub Actions to deploy automatically, or push the `dist/` contents to a `gh-pages` branch.
+In the repo **Settings → Pages**, set Source to **GitHub Actions**.

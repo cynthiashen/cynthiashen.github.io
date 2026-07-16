@@ -7,9 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "mkdir -p public && (cp -r assets public/ 2>/dev/null || true) && (cp -r games public/ 2>/dev/null || true) && vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
