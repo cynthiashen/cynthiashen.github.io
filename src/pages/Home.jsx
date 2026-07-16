@@ -56,6 +56,18 @@ export default function Home() {
             <div className="banner-button">check out my goodreads</div>
           </a>
         </div>
+
+        <div className="banner-section">
+          <img className="banner-section-image" src="/assets/images/interests/yarn_1.jpg" alt="Yarn" />
+          <br />I like to craft!
+          <br />
+          <Link to="/interests/knitting">
+            <div className="banner-button">read more</div>
+          </Link>
+          <a href="https://www.ravelry.com/people/cynthiashen18" target="_blank" rel="noopener noreferrer">
+            <div className="banner-button">check out my ravelry</div>
+          </a>
+        </div>
       </div>
     </>
   )

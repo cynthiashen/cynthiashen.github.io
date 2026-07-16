@@ -22,12 +22,11 @@ export default function Cycling() {
           <img className="container-image" src="/assets/images/interests/cycling_4.jpg" alt="Cycling" />
           <iframe
             title="Strava activity"
-            height="500"
+            height="600"
             width="500"
-            frameBorder="0"
+            style={{ border: 'none' }}
             allowTransparency="true"
-            scrolling="no"
-            src="https://www.strava.com/activities/4183611784/embed/52ec6c493e801ff402044daf173a5bd691fe0234"
+            src="https://strava-embeds.com/activity/8783378349"
           />
         </div>
       </div>
