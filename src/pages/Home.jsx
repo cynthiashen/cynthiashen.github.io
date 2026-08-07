@@ -11,7 +11,7 @@ export default function Home() {
 
       <div className="banner banner-intro">
         <div className="banner-text">
-          I'm Cynthia, a bay area native currently residing in San Francisco.
+          I'm Cynthia, a bay area native currently residing in New York City.
           <br />
           <Link to="/about">
             <button className="banner-button">read more</button>
@@ -46,6 +46,18 @@ export default function Home() {
         </div>
 
         <div className="banner-section">
+          <img className="banner-section-image" src="/assets/images/home/cynthia_run.jpg" alt="Running" />
+          <br />I like to run!
+          <br />
+          <Link to="/interests/running">
+            <div className="banner-button">read more</div>
+          </Link>
+          <a href="https://www.strava.com/athletes/25619535" target="_blank" rel="noopener noreferrer">
+            <div className="banner-button">check out my strava</div>
+          </a>
+        </div>
+
+        <div className="banner-section">
           <img className="banner-section-image" src="/assets/images/home/books.png" alt="Books" />
           <br />I like to read!
           <br />
@@ -54,6 +66,18 @@ export default function Home() {
           </Link>
           <a href="https://www.goodreads.com/user/show/1077640-cynthia-shen" target="_blank" rel="noopener noreferrer">
             <div className="banner-button">check out my goodreads</div>
+          </a>
+        </div>
+
+        <div className="banner-section">
+          <img className="banner-section-image" src="/assets/images/home/knitting.jpg" alt="Yarn" />
+          <br />I like to craft!
+          <br />
+          <Link to="/interests/knitting">
+            <div className="banner-button">read more</div>
+          </Link>
+          <a href="https://www.ravelry.com/people/cynthiashen18" target="_blank" rel="noopener noreferrer">
+            <div className="banner-button">check out my ravelry</div>
           </a>
         </div>
       </div>

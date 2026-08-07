@@ -22,13 +22,13 @@ export default function Books() {
       <h1>books</h1>
       <div className="container">
         <div className="container-text">
-          At the start of 2021, I made it a goal to read 25 books the whole year. I ended up finishing that goal by the end of May.
+          At the start of 2021, I made it a goal to read 25 books the whole year. I ended up finishing that goal by the end of May. In 2022, I finished 60 books, surpassing my goal of 52 books that year. 
           <br /><br />
-          It turns out that reading a lot is really easy, once you find the things you're actually interested in reading and just pick up a book.
+          Since then, I've lost a bit of momentum and haven't been on as much of a reading kick, but still try to find time to pick up a book when I can. 
           <br /><br />
           These days, I haven't been very picky about what I read. Whether it's historical fiction, sci-fi, fantasy, classics, non-fiction, memoirs, self help, cookbooks, or anything else: I've been trying to find space on my bookshelf for it. The only real filter that I've been using to pick books comes from my personal goal to diversify the kind of authors I read from. I want to make sure I'm hearing stories from voices that are not normally heard from (women, people of color, lgbtq+, etc.)
           <br /><br />
-          I've since extended my goal to reading 52 books in 2021 -- one book every week. If you have any reading suggestions (or want to hear any of my own book recs), feel free to check out my <a href="https://www.goodreads.com/user/show/1077640-cynthia-shen" target="_blank" rel="noopener noreferrer">goodreads!</a>
+          If you have any reading suggestions (or want to hear any of my own book recs), feel free to check out my <a href="https://www.goodreads.com/user/show/1077640-cynthia-shen" target="_blank" rel="noopener noreferrer">goodreads!</a>
         </div>
         <div className="books-widgets">
           <div id="gr_grid_widget_1622258817">
