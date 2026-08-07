@@ -1,3 +1,4 @@
+import posthog from '../posthog'
 import './Footer.css'
 
 const socialLinks = [
@@ -13,7 +14,12 @@ export default function Footer() {
       <nav className="nav-footer">
         {socialLinks.map(({ href, img, alt }) => (
           <li key={alt} className="footer-li">
-            <a href={href} target="_blank" rel="noopener noreferrer">
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => posthog.capture('outbound_link_opened', { destination: alt.toLowerCase(), placement: 'footer' })}
+            >
               <img src={img} alt={alt} style={{ width: 25 }} />
             </a>
           </li>

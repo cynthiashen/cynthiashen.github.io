@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { usePageTitle } from '../hooks/usePageTitle'
+import posthog from '../posthog'
 import './Subpage.css'
 
 export default function Food() {
@@ -29,7 +30,7 @@ export default function Food() {
           <br /><br />
           Now I try to make the most of the fact that I have access to some of the most amazing ingredients around. I shop at the Farmers' Market and local grocery stores as much as I can and get a lot of inspiration from the amazing produce and spices available.
           <br /><br />
-          On a whim, I started documenting my cooking and baking journey on Instagram. If you want to see more of my kitchen, check me out <a href="https://www.instagram.com/cynthskitchen" target="_blank" rel="noopener noreferrer">@cynthskitchen!</a>
+          On a whim, I started documenting my cooking and baking journey on Instagram. If you want to see more of my kitchen, check me out <a href="https://www.instagram.com/cynthskitchen" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('outbound_link_opened', { destination: 'instagram', placement: 'food' })}>@cynthskitchen!</a>
         </div>
         <blockquote
           className="instagram-media"
@@ -38,7 +39,7 @@ export default function Food() {
           style={{ background: '#FFF', border: 0, borderRadius: 3, boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', margin: 1, maxWidth: 540, minWidth: 0, padding: 0, width: '100%', boxSizing: 'border-box' }}
         >
           <div style={{ padding: 16 }}>
-            <a href="https://www.instagram.com/p/CE2TAi6lQA2/?utm_source=ig_embed" target="_blank" rel="noopener noreferrer" style={{ color: '#c9c8cd', fontFamily: 'Arial,sans-serif', fontSize: 14, lineHeight: 17, marginTop: 8, overflow: 'hidden', padding: '8px 0 7px', textAlign: 'center', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            <a href="https://www.instagram.com/p/CE2TAi6lQA2/?utm_source=ig_embed" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('outbound_link_opened', { destination: 'instagram', placement: 'food_embed' })} style={{ color: '#c9c8cd', fontFamily: 'Arial,sans-serif', fontSize: 14, lineHeight: 17, marginTop: 8, overflow: 'hidden', padding: '8px 0 7px', textAlign: 'center', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
               A post shared by cynthia (@cynthskitchen)
             </a>
           </div>

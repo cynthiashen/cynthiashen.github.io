@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import posthog from '../posthog'
 import './Home.css'
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
           <Link to="/interests/food">
             <div className="banner-button">read more</div>
           </Link>
-          <a href="https://www.instagram.com/cynthskitchen" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/cynthskitchen" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('outbound_link_opened', { destination: 'instagram', placement: 'home_food' })}>
             <div className="banner-button">check out my food instagram</div>
           </a>
         </div>
@@ -40,7 +41,7 @@ export default function Home() {
           <Link to="/interests/cycling">
             <div className="banner-button">read more</div>
           </Link>
-          <a href="https://www.strava.com/athletes/25619535" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.strava.com/athletes/25619535" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('outbound_link_opened', { destination: 'strava', placement: 'home_cycling' })}>
             <div className="banner-button">check out my strava</div>
           </a>
         </div>
@@ -52,7 +53,7 @@ export default function Home() {
           <Link to="/interests/books">
             <div className="banner-button">read more</div>
           </Link>
-          <a href="https://www.goodreads.com/user/show/1077640-cynthia-shen" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.goodreads.com/user/show/1077640-cynthia-shen" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('outbound_link_opened', { destination: 'goodreads', placement: 'home_books' })}>
             <div className="banner-button">check out my goodreads</div>
           </a>
         </div>

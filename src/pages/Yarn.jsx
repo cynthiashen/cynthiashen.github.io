@@ -1,4 +1,5 @@
 import { usePageTitle } from '../hooks/usePageTitle'
+import posthog from '../posthog'
 import './Subpage.css'
 
 export default function Yarn() {
@@ -12,7 +13,7 @@ export default function Yarn() {
           <br /><br />
           Since then, I've also taught myself how to knit through various youtube videos (shoutout to Norman from Nimble Needles for having the best comprehensive guides) and have made various beanies, cardigans, scarves, sweaters, tank tops, and even blankets.
           <br /><br />
-          If you're interested in seeing more of my fiber projects, check out my <a href="https://www.ravelry.com/people/cynthiashen18" target="_blank" rel="noopener noreferrer">ravelry!</a>
+          If you're interested in seeing more of my fiber projects, check out my <a href="https://www.ravelry.com/people/cynthiashen18" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('outbound_link_opened', { destination: 'ravelry', placement: 'yarn' })}>ravelry!</a>
         </div>
         <div className="container-images">
           <img className="container-image" src="/assets/images/interests/yarn_1.jpg" alt="Yarn project" />

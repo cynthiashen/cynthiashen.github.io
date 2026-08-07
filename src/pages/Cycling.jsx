@@ -1,4 +1,5 @@
 import { usePageTitle } from '../hooks/usePageTitle'
+import posthog from '../posthog'
 import './Subpage.css'
 
 export default function Cycling() {
@@ -14,7 +15,7 @@ export default function Cycling() {
           <br /><br />
           Cycling has really become an amazing way for me to feel more connected with my community. I've used it as a means of exploring different neighborhoods on weekends and mornings before work, and have found pockets of the city I never would've discovered otherwise. All this without having to worry about the pollution / environmental impact, AND while squeezing in a bit of exercise at the same time! I honestly can't imagine living in SF without my bike anymore.
           <br /><br />
-          If you want to follow more of my cycling adventures (most of which is just me exploring random parts of the city), check out my <a href="https://www.strava.com/athletes/25619535" target="_blank" rel="noopener noreferrer">strava!</a>
+          If you want to follow more of my cycling adventures (most of which is just me exploring random parts of the city), check out my <a href="https://www.strava.com/athletes/25619535" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('outbound_link_opened', { destination: 'strava', placement: 'cycling' })}>strava!</a>
         </div>
         <div className="container-images">
           <img className="container-image" src="/assets/images/interests/cycling.jpg" alt="Cycling" />

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { usePageTitle } from '../hooks/usePageTitle'
+import posthog from '../posthog'
 import './Subpage.css'
 import './Books.css'
 
@@ -28,7 +29,7 @@ export default function Books() {
           <br /><br />
           These days, I haven't been very picky about what I read. Whether it's historical fiction, sci-fi, fantasy, classics, non-fiction, memoirs, self help, cookbooks, or anything else: I've been trying to find space on my bookshelf for it. The only real filter that I've been using to pick books comes from my personal goal to diversify the kind of authors I read from. I want to make sure I'm hearing stories from voices that are not normally heard from (women, people of color, lgbtq+, etc.)
           <br /><br />
-          I've since extended my goal to reading 52 books in 2021 -- one book every week. If you have any reading suggestions (or want to hear any of my own book recs), feel free to check out my <a href="https://www.goodreads.com/user/show/1077640-cynthia-shen" target="_blank" rel="noopener noreferrer">goodreads!</a>
+          I've since extended my goal to reading 52 books in 2021 -- one book every week. If you have any reading suggestions (or want to hear any of my own book recs), feel free to check out my <a href="https://www.goodreads.com/user/show/1077640-cynthia-shen" target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('outbound_link_opened', { destination: 'goodreads', placement: 'books_intro' })}>goodreads!</a>
         </div>
         <div className="books-widgets">
           <div id="gr_grid_widget_1622258817">
@@ -44,7 +45,7 @@ export default function Books() {
               <noscript>Share <a rel="nofollow" href="/">book reviews</a> and ratings with Cynthia on Goodreads.</noscript>
             </div>
           </div>
-          <a href="https://www.goodreads.com/user/show/1077640-cynthia-shen" target="_blank" rel="noopener noreferrer" className="goodreads-link">View full bookshelf on Goodreads</a>
+          <a href="https://www.goodreads.com/user/show/1077640-cynthia-shen" target="_blank" rel="noopener noreferrer" className="goodreads-link" onClick={() => posthog.capture('outbound_link_opened', { destination: 'goodreads', placement: 'bookshelf' })}>View full bookshelf on Goodreads</a>
         </div>
       </div>
     </>
