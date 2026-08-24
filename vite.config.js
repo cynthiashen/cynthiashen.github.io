@@ -19,6 +19,5 @@ function spaFallbackPlugin() {
 
 export default defineConfig({
   plugins: [react(), spaFallbackPlugin()],
-  base: '/',
-  publicDir: 'public',
+  base: '/cynthiashen.github.io/',
 })

@@ -5,6 +5,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d dist",
     "dev": "vite",
     "build": "mkdir -p public && (cp -r assets public/ 2>/dev/null || true) && (cp -r games public/ 2>/dev/null || true) && vite build",
     "preview": "vite preview"
@@ -18,6 +20,7 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
+    "gh-pages": "^6.3.0",
     "vite": "^5.0.8"
   }
 }
