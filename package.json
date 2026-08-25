@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "mkdir -p public && (cp -r assets public/ 2>/dev/null || true) && (cp -r games public/ 2>/dev/null || true) && vite build",
     "preview": "vite preview"
