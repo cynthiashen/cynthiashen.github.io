@@ -1,6 +1,6 @@
 # cynthia shen
 
-Personal website built with React and Vite.
+Cynthia's personal website built with React and Vite.
 
 ## Development
 
@@ -25,6 +25,10 @@ The build copies `assets/` and `games/` to `public/` automatically, then outputs
 
 ## GitHub Pages Deployment
 
-Pushes to `master` build and deploy via GitHub Actions (`.github/workflows/deploy.yml`).
+```bash
+npm run deploy    
+```
+
+Creates a distributable version of the React app to `dist/`, then pushes the `dist/` to a new commmit on the `gh-pages` branch. Github Pages is configured to deploy from this branch. 
 
 In the repo **Settings → Pages**, set Source to **GitHub Actions**.
